@@ -1,0 +1,357 @@
+﻿/*全局基础样式，慎改*/
+
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+html, body, div, span, applet, object, iframe,h1, h2, h3, h4, h5, h6, p, blockquote, pre,a, abbr, acronym, address, big, cite, code,del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,b, u, i,dl, dt, dd, ol, ul, li,fieldset, form, label, legend,table, caption, tbody, tfoot, thead, tr, th, td,article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, menu, nav, output, section, summary,time, mark, audio, video {
+ margin: 0;
+ padding: 0;
+ border: 0;
+ font-size: 100%;
+ font: inherit;
+ vertical-align: baseline;
+ font: 14px/1.428 'Microsoft Yahei','HanHei SC', 'PingFang SC', Arial, Tahoma, Helvetica, simsun, sans-serif;
+}
+ul, ol, li, dl, dt, dd { list-style: none; padding: 0; margin: 0; }
+img { border: none; }
+table { border-collapse: collapse; }
+i, em, strong, b, dfn { font-weight: normal; font-style: normal; }
+
+a, a:visited  {
+    color: #666;
+    text-decoration: none;
+}
+a:hover, a:active {
+    color: #207bee;
+}
+
+
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+    font-family: inherit;
+    color: inherit;
+}
+h1, .h1 {
+    font-size: 36px;
+    line-height: 48px;
+}
+h2, .h2 {
+    font-size: 30px;
+    line-height: 40px;
+}
+h3, .h3 {
+    font-size: 24px;
+    line-height: 32px;
+}
+h4, .h4 {
+    font-size: 20px;
+    line-height: 26px;
+}
+h5, .h5 {
+    font-size: 18px;
+    line-height: 24px;
+}
+h6, .h6 {
+    font-size: 16px;
+    line-height: 22px;
+}
+
+h4 small, .h4 small, h5 small, .h5 small, h6 small, .h6 small, h4 .small, .h4 .small, h5 .small, .h5 .small, h6 .small, .h6 .small {
+    font-size: 75%;
+}
+h1 small, .h1 small, h2 small, .h2 small, h3 small, .h3 small, h1 .small, .h1 .small, h2 .small, .h2 .small, h3 .small, .h3 .small {
+    font-size: 65%;
+}
+
+button, input, optgroup, select, textarea {
+    margin: 0;
+    font: inherit;
+    color: inherit;
+}
+input[type='checkbox'], input[type='radio'] {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0;
+}
+
+/*  ffb300 hot  */
+.hot {
+  color: #ffb300;
+}
+
+.container {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.full_top {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.clearfix:after {
+    content: ' ';
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+
+.dn {
+    display: none;
+}
+
+/*input*/
+.form-field[type=text], .form-field[type=password] {
+    /*defaut*/
+    width: 100%;
+    padding: 5px 12px;
+    font-size: 14px;
+    color: #333;
+    border: 1px solid #ddd;
+    line-height: 20px;
+}
+
+.form-field[type=text]:focus, .form-field[type=password]:focus {
+    border-color: #70aaf4;
+    outline: 0;
+    outline: thin dotted\9;
+}
+
+.form-field-lg[type=text], .form-field-lg[type=password] {
+    /* defaut+lg= big */
+    font-size: 14px;
+    line-height: 20px;
+    padding: 9px 12px;
+}
+
+.form-field-radius[type=text], .form-field-radius[type=password] {
+    border-radius: 100px;
+    background: #fbfbfb;
+}
+
+.form-field-area {
+    /* defaut+area= textarea */
+    padding: 8px 12px;
+    height: 135px;
+}
+
+/* type of search (have icon) */
+.form-block {
+    position: relative;
+    display: block;
+}
+
+.form-block .form-field[type=text], .form-block .form-field[type=password] {
+    padding-right: 34px;
+}
+
+.form-block .hggfont {
+    position: absolute;
+    top: 50%;
+    right: 12px;
+    width: 16px;
+    height: 16px;
+    margin: -8px 0 0 0;
+    font-size: 16px;
+    text-align: center;
+    line-height: 16px;
+    color: #b2b2b2;
+
+}
+
+.form-user {
+    position: relative;
+    display: block;
+}
+
+.form-user .hggfont {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    width: 16px;
+    height: 16px;
+    margin: -8px 0 0 0;
+    font-size: 16px;
+    text-align: center;
+    line-height: 16px;
+    color: #b2b2b2;
+}
+
+.form-user .form-field[type=text], .form-user .form-field[type=password] {
+    padding-left: 40px;
+}
+
+.form-user-lg .hggfont {
+    width: 24px;
+    height: 24px;
+    line-height: 24px;
+    font-size: 24px;
+    margin-top: -12px;
+}
+
+.form-user-lg .form-field {
+    padding-left: 48px;
+}
+
+.form-block .hgg-sousuo {
+    top: 50%;
+    right: 0;
+    display: inline-block;
+    width: 42px;
+    height: 32px;
+    padding: 5px 0;
+    margin-top: -16px;
+    text-align: center;
+    line-height: 24px;
+    cursor: pointer;
+}
+
+.form-block .hgg-sousuo:hover {
+    color: #207bee;
+}
+
+.form-block-lg .hgg-sousuo {
+    height: 40px;
+    margin-top: -20px;
+    line-height: 34px;
+}
+
+.form-block-radius .hgg-sousuo {
+    border-radius: 0 50% 50% 0;
+}
+
+/*  验证状态  */
+.form-error .form-field {
+    border-color: #ff9d95;
+    color: #ee2b2a;
+}
+
+.form-error .form-warning {
+    display: inline-block;
+    margin-top: 4px;
+    color: #f44336;
+    font-size: 12px;
+    line-height: 18px;
+}
+
+.form-error .form-warning a {
+    font-size: 12px;
+    text-decoration: underline;
+}
+
+.form-error .form-notice {
+    display: inline-block;
+    margin-top: 4px;
+    color: #999;
+    font-size: 12px;
+    line-height: 18px;
+}
+
+.form-error .form-notice a {
+    color: #207bee;
+    font-size: 12px;
+    line-height: 18px;
+}
+
+.form-error .form-notice a:hover {
+    color: #0f5ec2;
+}
+
+/*  radio checkbox  defaut：label.checkbox/.radio > input[type=checkbox/type=radio] + font  */
+.checkbox, .radio {
+    display: inline-block;
+    min-height: 20px;
+    line-height: 20px;
+    padding-left: 16px;
+    cursor: pointer;
+}
+
+.checkbox input[type='checkbox'], .radio input[type='radio'] {
+    position: absolute;
+    margin: 4px 0 0 -16px;
+}
+
+label.disabled, label.disabled {
+    color: #999;
+    background: none;
+    cursor: not-allowed;
+}
+
+.disabled input[type=checkbox], .disabled input[type=radio] {
+    cursor: not-allowed;
+}
+
+
+/*  cell  */
+.row {
+    margin: 0 -8px;
+}
+
+.row:before,.row:after {
+    display: table;
+    line-height: 0;
+    content: ' ';
+}
+
+.row:after {
+    clear: both;
+}
+
+.col-1,.col-2,.col-3,.col-4,.col-5,.col-6,.col-7,.col-8,.col-9,.col-10,.col-11,.col-12 {
+    float: left;
+    padding: 0 8px;
+}
+
+.col-1 {
+    width: 8.33333333%;
+}
+
+.col-2 {
+    width: 16.66666667%;
+}
+
+.col-3 {
+    width: 25%;
+}
+
+.col-4 {
+    width: 33.33333333%;
+}
+
+.col-5 {
+    width: 41.66666667%;
+}
+
+.col-6 {
+    width: 50%;
+}
+
+.col-7 {
+    width: 58.33333333%;
+}
+
+.col-8 {
+    width: 66.66666667%;
+}
+
+.col-9 {
+    width: 75%;
+}
+
+.col-10 {
+    width: 83.33333333%;
+}
+
+.col-11 {
+    width: 91.66666667%;
+}
+
+.col-12 {
+    width: 100%;
+}
+

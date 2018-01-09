@@ -1,0 +1,996 @@
+﻿@charset "utf-8";
+
+/*清除浮动*/
+.clearfix:after { content: " "; display: block; clear: both; height: 0; }
+.clearfix { zoom: 1; }
+
+.hidden {
+    display: none;
+}
+
+/*CSS3箭头*/
+.arrow_box { position: relative; background: #fff; border: 1px solid #ccc; }
+.arrow_box:after, .arrow_box:before { bottom: 100%; left: 50%; border: solid transparent; content: " "; height: 0; width: 0; position: absolute; pointer-events: none; }
+.arrow_box:after { border-color: rgba(136, 183, 213, 0); border-bottom-color: #fff; border-width: 10px; margin-left: -10px; }
+.arrow_box:before { border-color: rgba(194, 225, 245, 0); border-bottom-color: #ccc; border-width: 11px; margin-left: -11px; }
+
+#content {
+    margin-top: 16px;
+    padding: 0;
+}
+/*筛选列表 */
+#query_filter { position:relative;border: 1px solid #e4e4e4; padding: 0 20px; margin-bottom: 10px; }
+#query_filter li { margin-top: 5px; font-family: SimSun, 'Microsoft YaHei'; line-height: 1.4em; font-size: 13px; border-top: 1px dotted #eee; }
+#query_filter li:first-child, #query_filter li:last-child { border-top: none; }
+#query_filter a {
+    text-decoration: none; display: inline-block; margin-right: 10px; color: #666;
+    margin-bottom: 10px; padding: 0 10px; line-height: 1.6em;
+    font-size: 13px;
+}
+#query_filter a:hover { color: #207BEE; }
+#query_filter a.on {
+    background-color: #207BEE;
+    color: #fff;
+    border-radius: 3px;
+}
+#query_filter label { display: inline-block; width: 100px; text-align: left; font-weight: normal; color: #858a97; margin-top: 8px; }
+
+/*位置*/
+#query_filter li.location {
+    position: relative;
+    background-color: #f8f8f8;
+    margin-bottom: 10px;
+    padding-left: 80px;
+    border-top: none;
+}
+
+#query_filter li.location::before {
+    position: absolute;
+    content: ' ';
+    display: inline-block;
+    width: 80px;
+    height: 102%;
+    background-color: #fff;
+    left: 0;
+    top:0;
+}
+#query_filter li.location label { text-indent: 5px; }
+#query_filter li.location strong {
+    display: block; float: left; font-weight: normal; text-align: center; color: #5a6c7e; margin: 0; cursor: pointer;
+    width: 80px; height: 40px; margin: 0 20px;
+    line-height: 40px;
+}
+#query_filter li.location strong:hover { color: #0f8aef; }
+#query_filter li.location strong:hover .hggfont,#query_filter li.location strong.on .hggfont { color: #0f8aef; }
+#query_filter li.location strong.on {
+    color: #0f8aef; border-bottom: 2px solid #0f8aef; margin-bottom: -1px;
+}
+#query_filter li.location strong[href].on { border-bottom: none; }
+#query_filter li.location > div[class] {
+    display: none;
+    border-top: 1px solid #E6E6E6;
+    padding: 15px 10px 3px 15px;
+    clear: both;
+}
+
+#query_filter li.location strong {
+    font-size: 13px;
+    color: #666;
+}
+
+#query_filter li.location strong .hggfont {
+    font-size: 16px;
+    color: #666;
+    position: relative;
+    top: 1px;
+}
+
+#query_filter .filter-more {
+    position: absolute;
+    bottom: -23px;
+    left: 50%;
+    width: 260px;
+    text-align: center;
+    margin-left: -130px;
+    border: 1px solid #DDDDDD;
+    border-top: 1px solid #fff;
+    background: #fff;
+    height: 24px;
+    line-height: 24px;
+    font-size: 12px;
+    color: #BDBDBD;
+}
+
+#query_filter .filter-more span {
+    font-size: 12px;
+}
+
+#query_filter .filter-more:hover {
+    cursor: pointer;
+}
+
+#query_filter .filter-more .hggfont {
+    position: relative;
+    top: 1px;
+}
+
+/*城市选择项*/
+#query_filter li.city_id { margin-top: 0; }
+#query_filter li.city_id label { margin: 0; }
+#query_filter li.city_id a {
+    margin: 0;
+    padding: 0 6px;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    margin-right: 22px;
+    position: relative;
+}
+
+
+#query_filter li.city_id a.on {
+    border-radius: 0;
+    color: #0f8aef;
+    font-weight: bold;
+    background-color: #fff;
+}
+
+#query_filter li.city_id a.on::after {
+    content: ' ';
+    display: block;
+    width: 0;
+    height: 0;
+    border-width: 10px 12px;
+    border-style: solid;
+    border-color: #fff #fff #f8f8f8 #fff;
+    position: absolute;
+    top: 26px;
+    left: 6px;
+    z-index: 0;
+}
+
+
+#query_filter li.city_id a.other { padding: 0 15px 0 8px; position: relative; cursor: pointer; }
+#query_filter li.city_id a.other:before {
+    content: ' '; display: block; width: 0; height: 0; border-top: 4px solid; position: absolute; right: 4px; top: 18px;
+    border-left: 4px solid rgba(0,0,0,0); border-right: 4px solid rgba(0,0,0,0);
+}
+
+#query_filter  li.city_id a.leader.on {
+    border: none;
+    background-color: #207BEE;
+    color: #fff;
+    border-radius: 3px;
+    line-height: 20px;
+    height: 20px; padding: 0;
+    width: 40px;
+    font-weight: normal;
+}
+
+#query_filter  li.city_id a.leader.on::after {
+    display: none;
+}
+
+/*商圈子选项*/
+#query_filter li.location strong.on:hover:before,
+#query_filter li.location strong.on:before { background-position: -282px -30px; }
+
+/*商圈小图标高亮*/
+#query_filter li.location strong[target="region_id"]:before { background-position: -199px 0; }
+#query_filter li.location strong[target="region_id"]:hover:before,
+#query_filter li.location strong[target="region_id"].on:before { background-position: -199px -30px; }
+
+#query_filter li.location strong[target="5b157b8cd9ac233e53fab00d9499c27b"]:before { background-position: -86px 0; }
+#query_filter li.location strong[target="5b157b8cd9ac233e53fab00d9499c27b"]:hover:before,
+#query_filter li.location strong[target="5b157b8cd9ac233e53fab00d9499c27b"].on:before { background-position: -86px -30px; }
+
+#query_filter li.location strong[target="03e91bc3c23c86160a54363f2a013ab5"]:before { background-position: -37px 0; }
+#query_filter li.location strong[target="03e91bc3c23c86160a54363f2a013ab5"]:hover:before,
+#query_filter li.location strong[target="03e91bc3c23c86160a54363f2a013ab5"].on:before { background-position: -37px -30px; }
+
+#query_filter li.location strong[target="388499bd46db25c10f76b051a6a2835b"]:before { background-position: 3px 0; }
+#query_filter li.location strong[target="388499bd46db25c10f76b051a6a2835b"]:hover:before,
+#query_filter li.location strong[target="388499bd46db25c10f76b051a6a2835b"].on:before { background-position: 3px -30px; }
+
+#query_filter li.location strong[target="3f6ac5db6efad41c0688161a55ac6e0f"]:before { background-position: -140px 0; }
+#query_filter li.location strong[target="3f6ac5db6efad41c0688161a55ac6e0f"]:hover:before,
+#query_filter li.location strong[target="3f6ac5db6efad41c0688161a55ac6e0f"].on:before { background-position: -140px -30px; }
+
+#query_filter li.location strong[target="498d00b2d1314b59ce4dc27445f52488"]:before { background-position: -249px 0; }
+#query_filter li.location strong[target="498d00b2d1314b59ce4dc27445f52488"]:hover:before,
+#query_filter li.location strong[target="498d00b2d1314b59ce4dc27445f52488"].on:before { background-position: -249px -30px; }
+
+/*商圈-机场/车站*/
+#query_filter li.location div .railway,
+#query_filter li.location div .motor,
+#query_filter li.location div .airport { margin-left: 28px; padding-left: 37px; }
+#query_filter li.location div .railway {
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAPCAMAAADarb8dAAAAYFBMVEX0+f8Piu9HpfO73fs4nvIql/Fzu/YXjvDX6/2s1vrZ7P3J5Pyy2fqXzPkgk/Ds9f6l0/ockfDw9//E4vyczvl6vvZks/VOqfPf7/7I5PyPyPiDwvd5vfZgsfVUrPQumfH4MO2AAAAAdElEQVQI12XKNxIDIRBE0V4EM3izVl73v6WWIkHoBR38avBUsQgJjagz23yo3IKG1SlpCx/3uYaPn5iezP7g4mtQZjdEKxnhgBbed6LHy4jsnNNnuEkZgpQLyVO8QqG3bUPQcggo4yOCRa+sWC49i39x+hG+5FUEtBxlcegAAAAASUVORK5CYII=) no-repeat left 2px;
+}
+#query_filter li.location div .motor {
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAWlBMVEX0+f85nvIrl/G73fvm8v6PyPhks/UllfGez/ng7/6Zzfnw9//T6f3I5Px/wfd6vvYwmvGq1fqFw/dOqfRFpfM1nfIhk/AZj/ATjO/////X6/2x2Pp1vPYekfCGlmBLAAAAcklEQVQY04XOORLDIBQE0WZk+wNaQLu83f+aLsqByPSiqYmaSe6kAazl1Brsj9oO1tQMRE3XR0C3mhKHqx0roo+BIsQefVGXh5XCDbmXoWbu/rXWzW9FRFpGinH5tILtXtvAZ++SLybnXYwEk70oygrPHwrCBPTXsl+BAAAAAElFTkSuQmCC) no-repeat left 2px;
+}
+#query_filter li.location div .airport {
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAVFBMVEX0+f/v9v9ktPVZrvSf0PnY7P14vfdtt/Yol/GAwfdKp/NEpPM7oPI3nvHV6v2azvlMqPPo9P7Q5/xxuvY2nfHc7f3S6fzI4/y22vqLxvhesfTB4PuoMfnQAAAAmUlEQVQY003PWw7EIAgF0IuiotbWvh+z/30OdvwYPiDnhpCAvyIvwwdwPHYbu/MASjaXwEszYReETHDTI1tSk13BZSIAczbN2nCkeup+93ssijdBbZL6rUte59JNZlUHM8uoWmK0Hs2EhwHU7W5jFU2nAMANXrs3l5xwBT1hS4iVkMee3BGgNJFl/JJNAxwlp/6nq0sbHGbgC7mmBVIx4LEeAAAAAElFTkSuQmCC) no-repeat left 2px;
+}
+
+/*商圈-地铁周边*/
+#query_filter li.location div[class="388499bd46db25c10f76b051a6a2835b"] { padding-left: 10px; }
+#query_filter li.location div[class="388499bd46db25c10f76b051a6a2835b"] em {
+    display: inline-block; font-style: normal; cursor: pointer;
+    line-height: 23px; padding: 0 10px;
+    margin-bottom: 10px;
+    font-size: 12px;
+}
+#query_filter li.location div[class="388499bd46db25c10f76b051a6a2835b"] em.on {
+    background-color: #0f8aef; color: #fff; border-radius: 3px;
+}
+#query_filter li.location div .subway { display: none; border-top: 1px dotted #e1e3e6; margin-top: 10px; padding-top: 10px; }
+#query_filter li.location div .subway a {
+    height: 53px; float: left; margin-right: 0; overflow: hidden; position: relative;
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAECAIAAADAusJtAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAQSURBVBhXYzjy5D8CP/kPAFQECp3EZR7iAAAAAElFTkSuQmCC) repeat-x 0 13px;
+}
+#query_filter li.location div .subway a.on {
+    font-weight: bold;
+    color: #0f8aef;
+    line-height: 24px;
+}
+#query_filter li.location div .subway a:before {
+    content: ' '; margin: 9px auto 5px auto; display: block; width: 12px; height: 12px; z-index: 1; position: relative;
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAMAAABhq6zVAAAAM1BMVEUAAACExfqExfqExfqExfqExfqExfqExfqExfr////k8v653vz6/P/E4/38/v/m8/663vwO+ghOAAAACXRSTlMAz8cGbvQb+W3GCc9+AAAATklEQVQI11WOWw7AIAgEF0FUwMf9T9umqWmdv0k2kwXAknJOwrhRcoswJwWYenvoxKjeXrwi2RZLKGPLKD+JfM7kC8iZhtKaEXOR4rhzATorBBHLpabpAAAAAElFTkSuQmCC) no-repeat center;
+}
+#query_filter li.location div .subway a.on:before {
+    width: 16px; height: 16px; margin-bottom: 1px; margin-top: 7px;
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAASFBMVEUAAAAPiu8Piu8Piu8Piu8Piu8Piu8Piu8Piu8Piu8Piu8Piu8Piu8Piu8Piu////9FpfP5/f/P6PzO5/z1+v7N5/yXzfiWzPg9G1uHAAAADnRSTlMA+ZWPBirXLPTUvbvY1su2YDgAAABxSURBVBjTZY9ZEoMgEERnRECzPAE1uf9NAwStonh/07N1S8Eap/o2Vv7ME41prvWTm0dRSj+cMZ6hzOR9he9W+YBaMbm/NQIYcbBfwg5OFOIlRNBOOGDpVhKs41Hfv/XNWIpHqsYG62O4Fv+ly2q8ZH7DDArjFf4J8gAAAABJRU5ErkJggg==);
+}
+
+/*地铁路线首尾*/
+#query_filter li.location div .subway a:first-child:after,
+#query_filter li.location div .subway a:last-child:after {
+    content: ' '; display: block; background-color: #f1f6ff; width: 50%; height: 4px; position: absolute; top: 13px; z-index: 0;
+}
+#query_filter li.location div .subway a:first-child:after { left: 0; }
+#query_filter li.location div .subway a:last-child:after { right: 0; }
+
+/*查看全部场地类型筛选条件*/
+#query_filter li .select_block { display: inline-block; width: 960px; vertical-align: top; margin-top: 10px; }
+#query_filter li.category_id .select_block { position: relative; width: 980px; padding-right: 40px;}
+#query_filter li.category_id .select_block span.view_more {
+    font-size: 12px;
+    cursor: pointer;
+    padding-left: 4px;
+    position: absolute;
+    top: -4px; right: -10px;
+    display:inline-block;
+    color: #bdbdbd;
+    overflow: hidden;
+    border: 1px solid #ddd;
+    width: 46px;
+    height: 26px;
+    line-height: 26px;
+}
+
+#query_filter li.category_id .select_block span.view_more .hggfont {
+    position: relative;
+    top: 1px;
+}
+
+#query_filter li.category_id .select_block span.view_more.spread {
+
+}
+
+/*筛选列表 - 自定义区间*/
+#query_filter li .custom { display: inline-block; font-size: 12px; display: none; }
+#query_filter li .custom input { width: 50px; border: 1px solid #ccc; border-radius: 0; padding: 0 0 0 3px; margin: 0; }
+#query_filter li .custom button {
+    background-color: #f8f8f8; color: #232a3b; border-radius: 0; border: none; cursor: pointer; margin-left: 3px; padding: 4px 10px;
+    border-radius: 2px; border: 1px solid #d2d2d2;
+}
+#query_filter li .custom button:hover { background-color: #0f8aef; color: #fff; border-color: #0f8aef; }
+#query_filter li .custom i { font-style: normal; display: none; }
+#query_filter li .custom span.handle { cursor: pointer; margin-right: 5px; }
+#query_filter li .custom span.handle:hover { color: #08c; }
+#query_filter li .custom span.form { display: none; }
+#query_filter li:hover .custom { display: inline-block; }
+#query_filter li .custom.focus { display: inline-block; }
+#query_filter li .custom.focus span.handle { color: #08c; }
+#query_filter li .custom.focus span.form { display: inline-block; }
+#query_filter li .custom.focus:hover { display: inline-block; }
+/*容纳人数 - 自定义区间 - 默认显示*/
+#query_filter li.meetingroom_people_num .custom,
+#query_filter li.meetingroom_people_num .custom span.handle { display: inline-block; }
+
+/*场地类型多选*/
+#query_filter li.category_id .select_block a {
+    padding-left: 25px;
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAfklEQVRYR+3XwQ2AIBBE0WE7ITRgCdKRVqIdaQk2sKGT1cSDiahHwMNQAPvzbuPQ+LnG93EFqOpeMyaEcN7OA0YR2UqGmFkHYHoNEJHovV9LBqSUejNbGEABClCAAhSgAAUoQAEK/FMAwFBpmMxfy6jkJrn9/Qiodjk71HwdH8e8OjBLChkvAAAAAElFTkSuQmCC) no-repeat 5px center;
+    background-size: 14px;
+}
+#query_filter li.category_id .select_block a:hover, #query_filter li.category_id .select_block a.on {
+    border-radius: 2px; color: #fff; padding-left: 25px; background: #207BEE url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQBAMAAADt3eJSAAAAHlBMVEUAAACBgYH+/v7v7+/09PTr6+vp6en6+vr4+Pjx8fF5H72EAAAAAXRSTlMAQObYZgAAAFBJREFUCNdjgANGQTAAMpRAQBGZUQ4E4oVARkdHR6NEI5DhIuIiKOIIYgg6CrqAGDMFBSVnTgQyjA0FjY0NQQxjYQgjFAQCgYw0EEhE2IUJADUFEie54zo7AAAAAElFTkSuQmCC) no-repeat scroll 5px center;
+    background-size: 14px;
+}
+
+/*搜索结果 - 酒店信息*/
+#search_result .hotel_list { list-style: none inside; padding: 0; line-height: 1.6em; }
+#search_result .hotel_list li { position: relative; border-top: 2px solid #e3e3e3; margin: 0 0 0 0; width: 840px; padding-top: 20px; }
+#search_result .hotel_list li:last-child { margin-bottom: 0; border-bottom: 2px solid #e3e3e3; }
+#search_result .hotel_list li:hover { /*border-color: #f90;*/ }
+#search_result .hotel_list .first_line h3 { display: inline-block; margin: 0; }
+#search_result .hotel_list .first_line { margin-bottom: 8px; }
+
+/*星星ICON*/
+#search_result .hotel_list .first_line .star {
+    display: inline-block; height: 20px; font-size: 12px; line-height: 20px; color: #f90; margin: 0 3px;
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAKCAMAAACzB5/1AAAAQlBMVEX/////qAD/zWv/rAv/+ez/vT7/uS//tSP//fr/4aX/sBf//fj/+vD/9uX/8tr/79H/68T/6Lv/36D/3Jf/1YX/036+iePpAAAASUlEQVQI103JRxLAMAgEQRYECs7p/1+1jThobl1Df8w0lETSwAe4Kaqs+FKuzowoO5N22UJe8S8zReJ3Cq2AGbAF93YVOtvheAFNcAFefVsOgAAAAABJRU5ErkJggg==) repeat-x left center;
+}
+#search_result .hotel_list .first_line .star.top {
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAKCAMAAACzB5/1AAAAOVBMVEUAAAD/XGj/XGj/XGj/XGj/XGj/XGj/XGj/XGj/XGj/XGj/XGj/XGj/XGj/XGj/XGj/XGj/XGj/XGgyA8ZbAAAAEnRSTlMAlBLQwVwG8ejdKdqBemhEOxqHEjCOAAAASUlEQVQI103MSRLAIAhEUVDBIXPf/7AJSKX8u7foJouZlhKQFu7AQZFwwVdhcW6I+hyWqfyQp91U/7MKS0MDyBkYwbudStIuxwvfoANfITwptAAAAABJRU5ErkJggg==);
+}
+#search_result .hotel_list .first_line .star1 { width: 14px; }
+#search_result .hotel_list .first_line .star2 { width: 28px; }
+#search_result .hotel_list .first_line .star3 { width: 42px; }
+#search_result .hotel_list .first_line .star4 { width: 56px; }
+#search_result .hotel_list .first_line .star5 { width: 70px; }
+
+/*钻石ICON*/
+#search_result .hotel_list .first_line .diamond {
+    display: inline-block; height: 20px;
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAKCAMAAACzB5/1AAAAOVBMVEX/////qAH/y2f/03//xFH/sBX//fj/4qr/tyr/rhH/8dT/5bP/2Y//xVX/7Mj/68T/3Zv/3Jf/1ILRzvAQAAAAT0lEQVQI1z2MSQ7AMAwCDbGbpUm3/z+2EWo64sBwwOwgJjxNbMUDqKNs0gfhwJyStKe0K12aASrZBOFRB2jrK9xDT6JVEs1+LvJW+ch5tReFnwGOjUymQgAAAABJRU5ErkJggg==) repeat-x left center;
+}
+#search_result .hotel_list .first_line .diamond1 { width: 14px; }
+#search_result .hotel_list .first_line .diamond2 { width: 28px; }
+#search_result .hotel_list .first_line .diamond3 { width: 42px; }
+#search_result .hotel_list .first_line .diamond4 { width: 56px; }
+#search_result .hotel_list .first_line .diamond5 { width: 70px; }
+
+#search_result .hotel_list li a.thumb { display: inline-block; border-radius: 0; margin: 0 20px 0 0; background: #f1f1f1; }
+#search_result .hotel_list li img.img_url { display: block; border-radius: 0;  background: #f1f1f1; cursor: pointer; }
+#search_result .hotel_list li div.info { display: inline-block; vertical-align: top; margin-top: 0;  width: 575px; }
+#search_result .hotel_list li div.info p { margin: 0; line-height: 2em; color: #858a97; }
+#search_result .hotel_list li div.info p.stat > span { width: 41%; display: inline-block; }
+#search_result .hotel_list li div.info p.stat > span strong { font-weight: normal; margin-right: 10px; }
+#search_result .hotel_list li div.info p.address { border-bottom: 1px dotted #e1e3e6; padding-bottom: 5px; margin-bottom: 5px; }
+#search_result .hotel_list li div.info span { vertical-align: top; }
+#search_result .hotel_list li div.info span.index {
+    border-radius: 50%; background-color: #0f8aef; color: #fff; width: 20px; height: 20px; text-align: center; line-height: 20px;
+    font-size: 14px; margin-right: 5px; display: inline-block; position: relative;
+}
+#search_result .hotel_list li div.info span.index:before {
+    content: ' '; display: block; width: 10px; height: 10px; background: #0f8aef; position: absolute; top: 12px; left: 5px;
+    transform:rotate(45deg);
+}
+#search_result .hotel_list li div.info span.index:after {
+    content: attr(data-index); display: block; width: 20px; height: 20px; position: absolute; top: 0; left: 0;
+}
+#search_result .hotel_list li div.info h3.title { font-size: 20px; font-weight: normal; font-family: 'Microsoft YaHei'; line-height: 1em; }
+#search_result .hotel_list li div.info span.grade {
+    border-radius: 2px; text-align: center; display: inline-block; margin: 0 5px 0 3px; position: relative; top: 2px; width: 18px; height: 18px; color: #fff; text-indent: -50px; overflow: hidden; background: #ff5c68 url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAASCAMAAABhEH5lAAAAYFBMVEX/XGj/+fn/bHf/maD/0dT/9/j/7e7/yMz/sbf5n6X5nqX4kpr/g4z/fYf/9PX/8fL/6uz/5ef/rbP/lJz/jpb/eoT/3N//1dj/y87/vMH/ub7/p67/pq3/c33/aHP/YW0k5QELAAAAd0lEQVQY023Q1w7CMBBE0b1xiQE7jYRe/v8vkRyZYJt5PBrtSiO6kSyNlkLkB7xtpYgGX5CFey5vA9ecFLAdm928tAYYnXsskTrMkZQ+EqAA2B32nDdKmepWqFqDfCmVppV6uvRxfK0UVBB/Ow3GXp4R6nH+TPgBChMDogdLvjMAAAAASUVORK5CYII=) no-repeat center;
+}
+#search_result .hotel_list li div.info span.category {
+    border-radius: 3px; border: 1px solid #f90; color: #f90; font-size: 12px; line-height: 20px; padding: 0 5px; margin: 0 3px;
+    display: inline-block;
+}
+#search_result .hotel_list li div.info span.favorable_rate { margin-left: 4em; float: right; display: block; }
+#search_result .hotel_list li div.info span.favorable_rate i { font-style: normal; color: #f25b19; }
+#search_result .hotel_list li div.info span.tags {
+    padding: 0 10px; line-height: 1.8em; margin-right: 5px; margin-top: 5px;
+    display: inline-block; border: 1px solid #b1b4be; border-radius: 2px; color: #858a97;
+}
+
+/*搜索结果 - 会议厅信息*/
+#search_result .hotel_list .meetingroom_info { text-align: center; font-size: 14px; margin-top: 10px; }
+#search_result .hotel_list .meetingroom_info th { background-color: #eef5fc; font-family: SimSun; font-weight: normal; font-size: 12px; color: #5a6c7e; }
+#search_result .hotel_list .meetingroom_info td { border-top: 1px dotted #e2e2e2; }
+#search_result .hotel_list .meetingroom_info h5 { margin: 0; padding: 0; border: none; }
+#search_result .hotel_list .meetingroom_info th h5 { font-weight: normal; font-size: 12px; }
+#search_result .hotel_list .meetingroom_info h6 { margin: 0; padding: 0; margin-top: 10px; }
+#search_result .hotel_list .meetingroom_info td { font-size: 12px; }
+#search_result .hotel_list .meetingroom_info td button.send_rfp {
+    border: none; background-color: #f90; color: #fff; border-radius: 3px; line-height: 1.8em; width: 130px;
+    font-family: SimSun, 'Microsoft YaHei'; padding: 3px 10px 1px 10px; margin: 5px; cursor: pointer;
+    border-bottom: 2px solid #e88300; border-radius: 2px; text-shadow: #e88300 0 1px 0; font-size: 14px;
+}
+#search_result .hotel_list .meetingroom_info td button.send_rfp.sent {
+    background-color: #999; border: none; text-shadow: #999 0 1px 0; padding: 3px 10px;
+}
+#search_result .hotel_list .meetingroom_info tbody tr:hover { }
+#search_result .hotel_list .meetingroom_info .setup_type { width: 220px; }
+#search_result .hotel_list .meetingroom_info .mroom_name { text-align: left; }
+#search_result .hotel_list .meetingroom_info .mroom_name h6 { font-weight: normal; font-size: 12px; }
+#search_result .hotel_list .meetingroom_info .mroom_name .images { display: block; width: 50px; height: 60px; float: left; }
+#search_result .hotel_list .meetingroom_info .mroom_name .images.has_img {
+    background: url(data:image/jpg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAICAgICAQICAgIDAgIDAwYEAwMDAwcFBQQGCAcJCAgHCAgJCg0LCQoMCggICw8LDA0ODg8OCQsQERAOEQ0ODg7/2wBDAQIDAwMDAwcEBAcOCQgJDg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg7/wgARCAASABYDAREAAhEBAxEB/8QAFwAAAwEAAAAAAAAAAAAAAAAABAUGCf/EABcBAQEBAQAAAAAAAAAAAAAAAAUEAwb/2gAMAwEAAhADEAAAANhO34WpKWl1BwN8Q6skdpytCRbZNZhpf//EACcQAAIBBAEDAwUBAAAAAAAAAAECAwQFBiERADFREhMiBxAUJUJh/9oACAEBAAE/AFo8fofozQ5FcrKbtX1DkO7TupZi7bYg60vjv1Zsaw27YfR3Z7IlCk42klQ/xIYr352CRrzrrPbVRYxFbJ8fia3SzmRJWimf5KPSQDyerZnsVsxqy2f8GOsoYkIrvcGzyxPCg61o77nWus7yuG91cFBan/UU6g6UqJG478HjgKNDXnq6ZHPeMPtVvrPXJUUTsBKBt0IAHP8Ao446u6KmWXFEUIizvwoHAHyP2wiCGe81InhSbiDXuIG/oeev/8QAIhEAAQMEAgIDAAAAAAAAAAAAAwABAgQFETESIRNCUWHR/9oACAECAQE/AHNUyuEgCJxi2ukWtrwmccZ5x9MrYY9a82O+cY2yNaikNMvLt9K12/wxkSo26DQxAec4alhUru9Ozv8ADL1VxlKMG4vjv9X/xAAgEQACAgICAgMAAAAAAAAAAAABAwACBAURMRITITNC/9oACAEDAQE/AKoxqYAdenlYxOJgtUGWpwDNojHxBUrHcTsaLVVXHwJsNh7SKI6Efl2aqtb9iO+0z9TGAIPM/9k=) no-repeat center;
+}
+#search_result .hotel_list .meetingroom_info .setup_type span { display: inline-block; width: 30px; background: #fff; }
+#search_result .hotel_list .meetingroom_info th span.need_vip { display: block; color: #0f8aef; cursor: pointer; }
+#search_result .hotel_list .meetingroom_info th.setup_type div { height: 20px; }
+#search_result .hotel_list .meetingroom_info th.setup_type span {
+    width: 28px; height: 20px;
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAANQAAAARAQMAAACfNRBcAAAABlBMVEUAAACExfqovjKaAAAAAXRSTlMAQObYZgAAAMlJREFUGNNjwAe4VgAJ+x9AghWIGT9+YGBg/v8AyGxiYJD/A6QVOICE/AGgnKAAAwMTgwKQdRwkB9NnBVTNLCjBwMDGYABk5TYgmf5iB0xfPVRffT1Q+N8/IGeBDkyfowHYPghoAjFaOWD6HIH6WAQcYPqgbkHo47N4gGRf1Qdkfdy5C5D0PbBA04ewj7GVB0jIY7dv/gmgPgaQvnqIO2EA6ndGBqRwgekD+x2sDxEuMPugfmf8DwlrdH0NoABftQAoHOoAtg8fAADBGEOVFpzhqQAAAABJRU5ErkJggg==) no-repeat left center;
+}
+
+/*会议厅摆台方式 - 各个小图标定位*/
+#search_result .hotel_list .meetingroom_info th.setup_type span.theatre { background-position: 5px center; }
+#search_result .hotel_list .meetingroom_info th.setup_type span.desk { background-position: -34px center; }
+#search_result .hotel_list .meetingroom_info th.setup_type span.fishbone { background-position: -72px center; }
+#search_result .hotel_list .meetingroom_info th.setup_type span.ushape { background-position: -111px center; }
+#search_result .hotel_list .meetingroom_info th.setup_type span.backshape { background-position: -151px center; }
+#search_result .hotel_list .meetingroom_info th.setup_type span.banquet { background-position: -189px center; }
+
+#search_result .hotel_list .meetingroom_info tr.details { display: none; text-align: left; background-color: #f6f6f6; }
+#search_result .hotel_list .meetingroom_info tr.details td { padding: 15px 50px; line-height: 1.6em; color: #5a6c7e; }
+#search_result .hotel_list .meetingroom_info tr.details td .detail_info span { margin-right: 10px; }
+#search_result .hotel_list .meetingroom_info tr.details td .photos img.img_url {
+    margin-right: 5px; margin-bottom: 5px; cursor: pointer; display: inline-block;
+}
+#search_result .hotel_list .meetingroom_info tr.details.noline td { border-top: none; }
+#search_result .hotel_list .meetingroom_info tr.hide { display: none; }
+
+/*酒店基本资料 - 价格高亮*/
+#search_result .hotel_list li div.info p.stat > span.meetingroom_reference_price,
+#search_result .hotel_list li div.info p.stat > span.guestroom_reference_price { color: #f90; font-size: 14px; font-weight: normal; }
+#search_result .hotel_list li div.info p.stat > span.meetingroom_reference_price strong,
+#search_result .hotel_list li div.info p.stat > span.guestroom_reference_price strong { color: #858a97; font-size: 14px; }
+
+
+/*查看参考价和vip价*/
+#search_result .hotel_list .meetingroom_info span.view_price { color: #08c; cursor: pointer; }
+#search_result .hotel_list .meetingroom_info span.show_price { color: #f90; font-size: 14px; font-weight: normal; }
+#search_result .hotel_list .meetingroom_info span.view_price:hover { color: #369; }
+
+/*查看会议厅详情*/
+#search_result .hotel_list .meetingroom_info td span.view_detail {
+    color: #0f8aef; cursor: pointer; padding-right: 15px; display: inline-block; margin-bottom: 5px;
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAGCAYAAAARx7TFAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAA5SURBVBhXYzCe/fE/PgCSByvCpRAmx4DMQQbIYmBFIIAsiMwGAbgiEIBJIisAARRFIICu4P////8Bzb7AzaW/B88AAAAASUVORK5CYII=) no-repeat right center;
+}
+#search_result .hotel_list .meetingroom_info td span.view_detail.spread {
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAGCAIAAACepSOSAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAA1SURBVBhXY/iPBIxnf4SywAAhB5SAICgfLgcXRZYGySHzgQDOZUCTgACIIEgOKoAKjGd/BAAdxosD1r5vLwAAAABJRU5ErkJggg==) no-repeat right center;
+}
+
+/*查看全部会议厅*/
+#search_result .hotel_list .meetingroom_info tr.foot span.view_all {
+    float: right; color: #0f8aef; font-size: 12px; margin: 10px; cursor: pointer; padding-right: 15px;
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAGCAYAAAARx7TFAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAA5SURBVBhXYzCe/fE/PgCSByvCpRAmx4DMQQbIYmBFIIAsiMwGAbgiEIBJIisAARRFIICu4P////8Bzb7AzaW/B88AAAAASUVORK5CYII=) no-repeat right center;
+}
+#search_result .hotel_list .meetingroom_info tr.foot span.view_all.spread {
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAGCAIAAACepSOSAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAA1SURBVBhXY/iPBIxnf4SywAAhB5SAICgfLgcXRZYGySHzgQDOZUCTgACIIEgOKoAKjGd/BAAdxosD1r5vLwAAAABJRU5ErkJggg==) no-repeat right center;
+}
+
+/*暂无搜索结果*/
+#search_result_empty { border: 1px solid #e4e4e4; width: 840px; padding-bottom: 0; height: 280px; }
+#search_result_empty .form_step1 { float: left; width: 620px; padding-top: 15px; }
+#search_result_empty .form_step2 { float: left; display: none; width: 570px; padding-top: 15px; }
+#search_result_empty .result_image { float: left; display: inline-block; width: 100px; height: 100px; background: url(../Images/tip.png) no-repeat center; }
+#search_result_empty .result_image.submit_yes { background-image: url(../Images/success.png); }
+#search_result_empty h4 { font-size: 16px; color: #232a3b; line-height: 22px; border-bottom: 1px dashed #e1e3e6; padding: 15px 0; }
+#search_result_empty p { font-size: 13px; color: #f18e00; line-height: 40px; }
+#search_result_empty span { font-size: 12px; color: #939393; margin-left: 15px; }
+#search_result_empty input { border: 1px solid #d9e0e8; padding: 4px; font-size: 12px; }
+#search_result_empty button {
+    border: none; background-color: #f90; color: #fff; border-radius: 3px; line-height: 1.8em;
+    font-family: 'Microsoft YaHei'; padding: 5px 10px; margin: 5px; cursor: pointer;
+    width: 168px; font-size: 16px; margin-left: 54px; margin-top: 15px;
+}
+#search_result_empty .form_step2 h4 { color: green; }
+
+/*搜索结果统计*/
+#serach_stat_info { margin: 0;width: 850px; line-height: 2em; font-size: 14px; color: #858a97; padding: 0 0 8px 0; font-family: 'Microsoft YaHei'; }
+#serach_stat_info .count {
+    display: inline-block;
+    margin-right: 20px;
+    width: 840px;
+    height: 40px;
+    background-color: #F9F9F9;
+    line-height: 40px;
+    padding-left: 10px;
+    font-size: 14px;
+    color: #999;
+    border: solid #D8D8D8;
+    border-width: 1px 0;
+    font-weight: 300;
+}
+#serach_stat_info .count strong { font-weight: normal; margin: 0 3px; color: #FF9514; }
+#serach_stat_info .args { display: inline-block; max-width: 840px; margin-top: 20px; }
+#serach_stat_info .args button { background: none; border: none; color: #08c; font-family: 'Microsoft YaHei'; cursor: pointer; margin: 0; }
+#serach_stat_info .args a {
+    display: inline-block; color: #08c; border: 1px solid #0f8aef; margin-right: 10px; padding: 0 5px; line-height: 1.6em;
+    font-size: 12px; padding-right: 5px; margin-bottom: 3px; color: #555;
+}
+#serach_stat_info .args a:hover { border-color: #06c; color: #369; }
+#serach_stat_info .args a:hover:after { background-color: #08c; color: #fff; }
+#serach_stat_info .args a:after {
+    content: '×'; font-size: 16px; position: relative; right: -4px; color: #0f8aef; background-color: #e5f1fb;
+    display: inline-block; width: 18px; height: 18px; line-height: 18px; text-align: center; top: 1px;
+}
+
+/*右侧模块*/
+#rightSlider { float: right; width: 340px; font-family: SimSun; background-color: #fff; }
+#rightSlider .item_block { border: 1px solid #e6e8ea; margin-top: 20px; padding: 8px 10px 10px 15px; }
+#rightSlider .item_block li { position: relative; margin-top: 16px; padding: 4px;}
+#rightSlider .item_block li:hover { background-color: #f6f6f6;}
+#rightSlider .item_block li img { position: relative;top: 2px;display: inline-block; margin-right: 5px; vertical-align: middle; background-color: #f1f1f1; }
+#rightSlider .item_block li a { display: inline-block; vertical-align: middle; color: #207BEE; width: 184px;overflow: hidden;height: 20px;margin-bottom: 6px;}
+#rightSlider .item_block li .info {display: inline-block; vertical-align: top; width: 200px}
+#rightSlider .item_block li .info span {display: inline-block; margin-top: -8px; color: #999;font-size: 12px;}
+#rightSlider .item_block li .right { position: absolute; top: 2px; right: 0px; color: #FF5C68; font-size: 14px;}
+#rightSlider .item_block li .star.top {
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAKCAMAAACzB5/1AAAAOVBMVEUAAAD/XGj/XGj/XGj/XGj/XGj/XGj/XGj/XGj/XGj/XGj/XGj/XGj/XGj/XGj/XGj/XGj/XGj/XGgyA8ZbAAAAEnRSTlMAlBLQwVwG8ejdKdqBemhEOxqHEjCOAAAASUlEQVQI103MSRLAIAhEUVDBIXPf/7AJSKX8u7foJouZlhKQFu7AQZFwwVdhcW6I+hyWqfyQp91U/7MKS0MDyBkYwbudStIuxwvfoANfITwptAAAAABJRU5ErkJggg==);
+}
+#rightSlider .item_block li .star {
+    display: inline-block; height: 20px; font-size: 12px; line-height: 20px; color: #f90; margin: 0 3px;
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAKCAMAAACzB5/1AAAAQlBMVEX/////qAD/zWv/rAv/+ez/vT7/uS//tSP//fr/4aX/sBf//fj/+vD/9uX/8tr/79H/68T/6Lv/36D/3Jf/1YX/036+iePpAAAASUlEQVQI103JRxLAMAgEQRYECs7p/1+1jThobl1Df8w0lETSwAe4Kaqs+FKuzowoO5N22UJe8S8zReJ3Cq2AGbAF93YVOtvheAFNcAFefVsOgAAAAABJRU5ErkJggg==) repeat-x left center;
+}
+#rightSlider .item_block li .star1 { width: 14px; }
+#rightSlider .item_block li .star2 { width: 28px; }
+#rightSlider .item_block li .star3 { width: 42px; }
+#rightSlider .item_block li .star4 { width: 56px; }
+#rightSlider .item_block li .star5 { width: 70px; }
+#rightSlider .item_block li a:hover { color: #0f8aef; }
+#rightSlider .item_block li a:hover { color: #0f8aef; }
+#rightSlider .item_block h5 {
+    margin: 0;
+    padding: 0;
+    color: #5a6c7e;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #E6E8EA;
+}
+#rightSlider .item_block h5 a { color: #333;font-weight:bold;}
+#js-your-demands .stat { display:none !important; }
+#rightSlider .item_block h5 .stat { float: right; }
+#rightSlider .item_block h5 .stat span { height: 20px; font-size: 13px; font-weight: normal; font-family: SimSun; }
+#rightSlider .item_block h5 .stat span:first-child,
+#rightSlider .item_block h5 .stat span:last-child {
+    cursor: pointer; display: inline-block; padding: 3px 5px; font-size: 14px;  font-weight: bold;
+}
+#rightSlider .item_block h5 .stat span:first-child { margin-right: 3px; }
+#rightSlider .item_block h5 .stat span:last-child { margin-left: 3px; }
+#rightSlider .item_block .item_block_line {
+    line-height: 18px;
+    height: 18px;
+    margin-top: 10px;
+}
+
+#rightSlider .item_block .item_block_line .item-block-value {
+    color: #666;
+}
+
+#rightSlider .item_block .item_block_line .item-block-label {
+    color: #999;
+}
+
+.item_block_item {
+    position: relative;
+}
+
+#rightSlider .item_block .item_block_item .item_block_item_edit {
+    position: absolute;
+    color: #207BEE;
+    right: 0;
+    font-weight: normal;
+}
+
+.item_block_item + .item_block_item {
+    margin-top: 20px;
+}
+
+/*百度地图模块*/
+#baiduMapBox {
+    display: block; width: 340px; height: 280px; background-color: #eee;
+    border: 0px solid #666; vertical-align: top; margin-top: 10px;
+    position: relative; border: 1px solid #e6e8ea; border: 1px solid #c5c5c5;
+}
+#baiduMapBox .findByMap {
+    position: absolute; right: 0; bottom: 26px; width: 120px; height: 32px; line-height: 32px; color: #fff; background-color: #1c92e5;
+    opacity: 0.8; text-align: left; text-indent: 10px;
+}
+#baiduMapBox .findByMap:hover { opacity: 1; background-color: #f90; }
+#baiduMapBox .findByMap:before {
+    content: ' '; margin: 0; display: inline-block; width: 26px; height: 21px; position: relative; top: 8px;
+    background: url(../Images/circle_icon03.png) no-repeat -310px 0; margin-right: 3px;
+}
+
+/*显示会议厅详情图片列表弹层*/
+.show_mroom_images { padding: 20px 20px 0 20px; background: #fff; }
+.show_mroom_images .photo_box { margin: 0; overflow: hidden; width: 840px; height: 440px; background-color: #fff; }
+.show_mroom_images .photo_box .thumb { float: left; width: 220px; height: 440px; overflow: auto; }
+.show_mroom_images .photo_box .thumb img.small {
+    display: inline-block; width: 90px; height: 68px; border: 2px solid #fff; cursor: pointer; padding: 2px; background-color: #fff;
+}
+.show_mroom_images .photo_box .thumb img.small.on { border-color: #f90; }
+.show_mroom_images .photo_box img.large {
+    display: block; float: right; background-color: #fff; border: 1px solid #ccc; padding: 5px; width: 600px; height: 427px;
+}
+
+/*显示会议厅详情图片列表弹层 - 自定义滚动条*/
+.show_mroom_images .photo_box .thumb::-webkit-scrollbar { width: 10px; height: 10px; }
+.show_mroom_images .photo_box .thumb::-webkit-scrollbar-button:vertical { display: none; }
+.show_mroom_images .photo_box .thumb::-webkit-scrollbar-corner,
+.show_mroom_images .photo_box .thumb::-webkit-scrollbar-track { background-color: #fff; }
+.show_mroom_images .photo_box .thumb::-webkit-scrollbar-thumb { border-radius: 10px; background-color: rgba(0,0,0,.3); }
+.show_mroom_images .photo_box .thumb::-webkit-scrollbar-thumb:vertical:hover { background-color: rgba(0,0,0,.35); }
+.show_mroom_images .photo_box .thumb::-webkit-scrollbar-thumb:vertical:active { background-color: rgba(0,0,0,.38); }
+
+/*显示发送RFP询价单弹层*/
+#sendrfp_dialog { padding: 20px; font-size: 16px; font-family: Verdana,"SimSun","Microsoft YaHei"; min-width: 450px; }
+#sendrfp_dialog form p { margin-bottom: 10px; font-family: "Microsoft YaHei"; }
+#sendrfp_dialog form p label { font-weight: normal; font-size: 14px; color: #888;line-height: 32px; }
+#sendrfp_dialog form p .hggfont.date { font-size: 18px; position: relative; left: -33px; top: 3px; }
+#sendrfp_dialog form p label:first-child,
+#sendrfp_dialog form p.note label { vertical-align: middle; display: inline-block; width: 75px; height: 32px; }
+#sendrfp_dialog form p.phone label:before { content: '*'; font-weight: bold; color: red; margin-right: 7px; padding-top: 10px; }
+#sendrfp_dialog form p label.item { cursor: pointer; margin-right: 10px; }
+#sendrfp_dialog form p label.item:hover { color: #369; }
+#sendrfp_dialog form p label.item input { position: relative; top: 2px; }
+#sendrfp_dialog form p textarea { vertical-align: top; width: 300px; height: 80px;margin-top: 6px; }
+#sendrfp_dialog form p button {
+    border: none; background-color: #f90; color: #fff; border-radius: 3px; line-height: 1.8em;
+    font-family: 'Microsoft YaHei'; padding: 5px 10px; margin: 5px 5px 5px 8px; cursor: pointer;
+    width: 168px; font-size: 16px;
+}
+/*填写会议备注*/
+#sendrfp_dialog form p.note label, #sendrfp_dialog form p.note textarea { display: none; resize: none; }
+#sendrfp_dialog form p.note em { display: block; color: #08c; font-style: normal; text-align: right; cursor: pointer; width: 310px; }
+#sendrfp_dialog form p.note em:hover { text-decoration: underline; }
+
+/*这俩货默认隐藏*/
+#sendrfp_dialog .view_count { display: hidden; }
+#sendrfp_dialog .cover_block { display: hidden; }
+
+/*询价单发送成功*/
+#sendrfp_dialog .send_success_qrcode { font-size: 14px; }
+#sendrfp_dialog .send_success_qrcode .show_qrcode { float: left; text-align: center; margin-right: 20px; }
+#sendrfp_dialog .send_success_qrcode .show_qrcode img { display: block; width: 100px; height: 100px; }
+#sendrfp_dialog .send_success_qrcode .show_qrcode span { font-size: 12px; }
+#sendrfp_dialog .send_success_qrcode .show_info { float: left; }
+#sendrfp_dialog .send_success_qrcode .show_info img {}
+#sendrfp_dialog .send_success_qrcode .show_info h5 {
+    padding: 0; border: none; padding-bottom: 10px; font-size: 20px; color: #1cbb3e; line-height: 24px; font-weight: normal; margin: 0 0 10px 0;
+    font-family: Arial,'Microsoft Yahei',simsun,sans-serif;
+}
+#sendrfp_dialog .send_success_qrcode .show_info h5 i.i { position: relative; top: 2px; margin-right: 10px; }
+#sendrfp_dialog .send_success_qrcode .show_info p { font-size: 14px; }
+#sendrfp_dialog .send_success_qrcode .show_info h6 { margin: 0;  margin-top: 20px; font-size: 14px; }
+
+/*已通知n家酒店回复报价和档期*/
+#sendrfp_dialog .view_count { text-align: left; font-size: 12px; display: none; }
+#sendrfp_dialog .view_count span { display: inline-block; cursor: pointer; margin-left: 83px; color: #888; }
+#sendrfp_dialog .view_count span:hover { color: #f90; }
+#sendrfp_dialog .view_count strong { margin: 0 3px; color: #f90; }
+
+/*询价单预览模式*/
+#sendrfp_dialog.view_model { position: relative; }
+#sendrfp_dialog.view_model p.tips { visibility: hidden; }
+#sendrfp_dialog.view_model .note em { visibility: hidden; }
+#sendrfp_dialog.view_model .view_count { display: block; }
+#sendrfp_dialog.view_model .cover_block {
+    display: block; position: absolute; left: 0; top: 0; right: 0; bottom: 100px; font-size: 12px; text-align: right;
+}
+#sendrfp_dialog.view_model .cover_block a { cursor: pointer; display: inline-block; margin: 10px 15px; color: #06c; }
+#sendrfp_dialog.view_model .cover_block a:hover { text-decoration: underline; color: #ffa800; }
+#sendrfp_dialog.view_model .cover_block a i { margin-right: 3px; }
+#sendrfp_dialog.view_model .phone label:before,
+#sendrfp_dialog.view_model .phone label:after { display: none; }
+#sendrfp_dialog.view_model label { position: relative; top: -2px; }
+#sendrfp_dialog.view_model label.item,
+#sendrfp_dialog.view_model input,
+#sendrfp_dialog.view_model textarea { border-color: #fff; position: relative; top: -3px; }
+#sendrfp_dialog.view_model label.item { margin-left: 8px; }
+#sendrfp_dialog.view_model i.hggfont.date { visibility: hidden; }
+#sendrfp_dialog.view_model input[type="checkbox"] {}
+#sendrfp_dialog form p label.item input[type="checkbox"] {position:relative;top:0px;margin-right:2px;}
+
+/*搜索结果图标*/
+#search_result_empty .result_image {
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAMAAAAp4XiDAAAANlBMVEX////91nn+6LP+6rz93pL92IH/+u/+7sX+5av//Pf93Ir/9d3+8M3+46P+4p/94Jr/+er+8tUk6djZAAAAqUlEQVRIx+3Q0Q6DIAyFYU6BoiCo7/+yG3FhXkBSNpc443fNH9qqsyOPqri0ioQWy/UiAHaoSQDVEw0EVTXANJPG/3QnRyecTKFlyYQd4WCaivWbXUYaMteROGw8ixOO85MBYu+RE9CbEDAekrDxBcmSCTvCwZwuwge7/HuyTgXLkhVvXpaE/kQtoeBTXexOfpQsziVAu6oZNr74/CiozKOD3T60HUhdygOEagrfq1GFNwAAAABJRU5ErkJggg==);
+}
+
+#search_result .hotel_list li:first-of-type {
+    border-top: none;
+}
+/*促销标志icon*/
+#search_result .hotel_list li a.thumb.sales { position: relative; }
+#search_result .hotel_list li a.thumb.sales:after {
+    content: ' '; display: inline-block; width: 44px; height: 28px; position: absolute; top: 0; left: 10px;
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACwAAAAcCAMAAAAtIK2eAAAAQlBMVEUAAAD8fzT5cSH5cCD5cSH5cSH4cCD7ei79hDv9gTf7eS37ei79hDz4cCD/////8ev+08H+qoH+4tf+u537eS35dSZQqjd+AAAADHRSTlMA/jMGZpnMmfnMzGaiV38mAAAAyklEQVQ4y+XR2w6DIAwGYHS6g8Oe2N7/VddQFZZGwq7XC6HJ95cmhvhD/RNmiGAl2mGKWglPMEkEtosppHwAe6yzKoz6AJMkZPCTbdaOc9NaAzGWnUW/SFvLDhOinbRlOZLYzWNhxZJqfD45MhaRJG9TTfaYgfsnE0iFkZqTgUV2rLt4/BoOrG57WrSznyPaxQOv6/q2QKsKXi0w9GIrDXTi8kQv9oE2vs7TeBmnefE7BefCXpq4LYPDzoWvxONesHc+8cyJ4Fwj8QFgezb5SOiBJAAAAABJRU5ErkJggg==) no-repeat center;
+}
+
+/*筛选项前导小图标*/
+#query_filter > li > label { overflow: hidden; position: relative; top: 6px; font-size: 13px;width: 85px; color: #666;}
+
+#query_filter > li.category_id > label:before { background-position: -34px 0; }
+#query_filter > li.meetingroom_space > label:before { background-position: -68px 0; }
+#query_filter > li.meetingroom_people_num > label:before { background-position: -101px 0; width: 17px; margin-right: 2px; }
+#query_filter > li.guestroom_price > label:before { background-position: -135px 0; }
+#query_filter > li.meetingroom_price > label:before { background-position: -168px 0; width: 16px; }
+
+/*调整字体颜色*/
+#search_result .hotel_list li div.info p.stat { color: #232a3b; }
+#search_result .hotel_list li div.info p.stat strong { color: #858a97; }
+#search_result .hotel_list li div.info p.stat > span.meetingroom_reference_price,
+#search_result .hotel_list li div.info p.stat > span.guestroom_reference_price { color: #f25b19; }
+#search_result .hotel_list .first_line h3.title a { color: #0f8aef; position: relative;  top: -2px;font-size:18px;}
+#query_filter a.on { border-radius: 2px; }
+
+/*查看已通知的酒店列表*/
+#sendlist { background-color: #fff; height: 100%; overflow: auto; }
+#sendlist ul.sent_hotel_list { margin: 10px 20px; }
+#sendlist ul.sent_hotel_list span.rollback { display: inline-block; font-size: 14px; line-height: 1.8em; color: #06c; cursor: pointer; margin-bottom: 10px; }
+#sendlist ul.sent_hotel_list span.rollback i.i { margin-right: 3px; font-size: 16px; }
+#sendlist ul.sent_hotel_list span.rollback:hover { color: #f90; }
+#sendlist ul.sent_hotel_list li { font-size: 14px; line-height: 2em; margin-left: 8px; }
+#sendlist ul.sent_hotel_list li > div { padding-left: 20px; }
+#sendlist ul.sent_hotel_list li > div span {
+    display: block; font-size: 13px; padding-left: 25px;
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQBAMAAADt3eJSAAAAHlBMVEUAAACBgYH+/v7v7+/09PTr6+vp6en6+vr4+Pjx8fF5H72EAAAAAXRSTlMAQObYZgAAAFBJREFUCNdjgANGQTAAMpRAQBGZUQ4E4oVARkdHR6NEI5DhIuIiKOIIYgg6CrqAGDMFBSVnTgQyjA0FjY0NQQxjYQgjFAQCgYw0EEhE2IUJADUFEie54zo7AAAAAElFTkSuQmCC) no-repeat 5px center;
+}
+#sendlist ul.sent_hotel_list li a { font-size: 14px; color: #666; }
+#sendlist ul.sent_hotel_list li a:hover { color: #f90; }
+#sendlist ul.sent_hotel_list { list-style-type: none; counter-reset: sectioncounter; }
+#sendlist ul.sent_hotel_list li:before {
+    content:counter(sectioncounter) "、"; counter-increment: sectioncounter;
+}
+
+/*橙色按钮hover*/
+#sendrfp_dialog form p button:hover,
+#search_result .hotel_list .meetingroom_info td button.send_rfp:hover,
+#search_result .hotel_list .sendrfp_btn_block button.send_rfp:hover { background: #e88300; color: #fff; transition: all 0.3s ease 0s; }
+#search_result .hotel_list .meetingroom_info td button.send_rfp.sent:hover,
+#search_result .hotel_list .sendrfp_btn_block button.send_rfp.sent:hover { background: #999; }
+
+/*浮动定位的摆台方式说明层*/
+#setype_float_tip {
+    position: absolute; left: 50%; top: 50%; background: #fff;
+    border: 1px solid #ccc; border-radius: 5px;
+    box-shadow: 5px 5px 15px -5px rgba(0,0,0,0.5);
+}
+#setype_float_tip .setype_thumb { float: left; margin: 10px; }
+#setype_float_tip .setype_thumb h5 { margin: 0; padding: 0; line-height: 2em; font-family: 'Microsoft YaHei'; font-weight: 700; color: #232a3b; }
+#setype_float_tip .setype_thumb img { width: 130px; height: 100px; background-color: #eee; }
+#setype_float_tip .setype_detail { float: right; width: 380px; margin: 10px; margin-top: 25px; }
+#setype_float_tip .setype_detail dl { font-family: 'Microsoft YaHei'; color: #858a97; }
+#setype_float_tip .setype_detail dl dt { font-weight: normal; float: left; font-weight: bold; }
+#setype_float_tip .setype_detail dl dt:after { content: '：'; }
+#setype_float_tip .setype_detail dl dd { margin-left: 0; }
+
+/*定位气泡箭头位置*/
+#setype_float_tip.arrow_box:after,
+#setype_float_tip.arrow_box:before { left: 30px; }
+
+/*************************************************************CSSHACK************************************************/
+
+/*分页器*/
+#page_block { text-align: center; margin: 0; width: 840px; border: 1px solid #e4e4e4; border-top: none; }
+
+/*分页器2*/
+#page_block { margin: 0; width: 840px; border: none; }
+.pager a { border-radius: 0; background: none !important; }
+.pager a.on,.pager a:hover{ background-color: #0f8aef !important; color: #fff; border-color: #2896eb; }
+
+/*下拉框组件*/
+#hgg_selectbox { z-index: 99999999 !important; }
+/*日期选择框*/
+.pika-single { z-index: 99999999 !important; }
+
+/*****************************************************不显示会议厅信息后********************************************/
+
+/*发送询价单按钮*/
+#search_result .hotel_list .sendrfp_btn_block { position: relative; padding-bottom: 15px; }
+#search_result .hotel_list .sendrfp_btn_block button.send_rfp {
+    border: none; background-color: #FFB300; color: #fff; border-radius: 3px; line-height: 1.8em;
+    font-family: SimSun, 'Microsoft YaHei'; padding: 4px 10px; margin: 5px; cursor: pointer;
+    border-radius: 2px; font-size: 16px;
+    position: absolute; right: 0; bottom: 10px;
+}
+
+#search_result .hotel_list .sendrfp_btn_block button.send_rfp.sent {
+    background-color: #999; border: none; text-shadow: #999 0 1px 0; padding: 3px 10px;
+}
+
+/*调整样式间距*/
+#query_filter { margin-bottom: 40px; }
+#serach_stat_info { padding-bottom: 2px; }
+#baiduMapBox { margin-top: 3px; }
+
+/*暂无搜索结果和一条搜索结果最小高度处理*/
+#search_result .hotel_list { min-height: 500px; }
+#search_result_empty { margin-bottom: 300px; margin-top:20px;}
+
+/*酒店总数不高亮*/
+#serach_stat_info .count strong:first-child { color: #858a97; }
+#serach_stat_info .count strong:last-child { font-size: 16px; font-weight: bold; }
+
+/*rfp按钮文案加粗*/
+#search_result button.send_rfp { font-weight: bold; }
+
+
+/*调整发RFP弹层细节*/
+#sendrfp_dialog form p label:first-child, #sendrfp_dialog form p.note label { font-size: 14px; }
+#sendrfp_dialog form p input[type="text"] {padding: 3px 3px 3px 8px; font-family: 'Microsoft Yahei'; font-size: 15px; border: 1px solid #eaeaea;width:210px; }
+#sendrfp_dialog form p textarea { font-size: 15px; border: 1px solid #eaeaea; padding: 0 8px; }
+#sendrfp_dialog form p.tips { font-size: 16px; color: #b0b0b0; text-indent: 80px; }
+#sendrfp_dialog form p.tips i {
+    display: inline-block; width: 20px; height: 20px; position: relative; top: 4px; margin-right: 5px; background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAANCAMAAACuAq9NAAAASFBMVEX///+rq6vz8/Pv7++xsbH7+/uurq79/f34+Pj19fXx8fHs7OzPz8/BwcG9vb26urq4uLi1tbXp6enn5+fi4uLc3NzV1dXExMSWtwtyAAAAXUlEQVQI103MSQ6AIBBE0S5pkXlwvP9NFegY3u6nkiKxBZ0d/eUqUFep9UmqAFYqAkXlIJXwqbKZguaWl9zrGqXCzoA+aWBEz/ogASB5b1W3tGRHER2TWSaGGBP9AhrwArCCJRsOAAAAAElFTkSuQmCC) no-repeat center;
+}
+#sendrfp_dialog form p.note em {
+    width: 180px; font-size: 15px; color: #0f8aef; cursor: pointer; padding-right: 13px; display: inline-block; margin-bottom: 5px;
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAGCAYAAAARx7TFAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAA5SURBVBhXYzCe/fE/PgCSByvCpRAmx4DMQQbIYmBFIIAsiMwGAbgiEIBJIisAARRFIICu4P////8Bzb7AzaW/B88AAAAASUVORK5CYII=) no-repeat right center;
+}
+#sendrfp_dialog.view_model .cover_block a { font-family: 'Microsoft Yahei'; font-size: 15px; }
+#sendrfp_dialog form p label.item { font-family: 'Microsoft Yahei'; font-size: 15px; }
+
+#sendrfp_dialog.view_model form p input[type="text"] { border-color: #fff; }
+#sendrfp_dialog.view_model form p textarea { border-color: #fff; overflow: auto; }
+
+#sendrfp_dialog form p input[name="people_num"] {
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABEAAAAGAQMAAAAfcOeaAAAABlBMVEX///+FipcdO3wzAAAAG0lEQVQI12NoaGBgOAjEyQwMDGZALAPEHAwMADbmAv94k7YQAAAAAElFTkSuQmCC) no-repeat center right;
+    background-position: 184px;
+}
+
+/*让弹层内容居中*/
+#sendrfp_dialog form p.tips { text-align: center; text-indent: 0px; }
+#sendrfp_dialog form p { margin-bottom: 15px; }
+#sendrfp_dialog form p label { margin-left: 40px; color: #333;font-size:14px; }
+#sendrfp_dialog form p label.item { margin-left: 0; color: #666; font-size: 15px; }
+#sendrfp_dialog form p textarea { width: 215px; font-family: 'Microsoft Yahei'; font-size: 15px; }
+#sendrfp_dialog form p.note em { width: 218px; }
+#sendrfp_dialog.view_model .view_count { text-align: center; }
+#sendrfp_dialog.view_model .view_count span { margin: 0 auto; }
+#sendrfp_dialog.view_model form p label { margin-top: -5px; font-size:14px;}
+#sendrfp_dialog.view_model form p.note label { margin-top: 0px; }
+#sendrfp_dialog.view_model form p input[name="people_num"] { background-image: none; }
+#sendrfp_dialog.view_model form p label.item { font-size: 15px; }
+#sendrfp_dialog form p button { width: 200px; }
+
+/*弹层标题字体样式*/
+.layui-layer-title { font-family: 'Microsoft Yahei'; font-size: 16px; }
+
+#page_block { margin-bottom: 60px; }
+
+/*IE9以下强制高度*/
+#sendrfp_dialog form p input[type="text"] { height: 32px !important; }
+
+/*春哥样式强化剂*/
+#sendrfp_dialog.view_model form p label { margin-left:90px; }
+#sendrfp_dialog.view_model form p label:first-of-type { text-align:right; color:#999; }
+#sendrfp_dialog.view_model form p:last-child { text-align:center; }
+#sendrfp_dialog.view_model form p:last-child label:first-child { display:none; width:0px; height:0px; margin:0; padding:0; }
+#sendrfp_dialog.view_model .cover_block a { margin:10px 30px 0 0; }
+
+#sendlist ul.sent_hotel_list { height: 320px; overflow:auto; }
+#sendlist ul.sent_hotel_list li { margin:10px 0 0 40px; }
+#sendlist ul.sent_hotel_list span.rollback {
+    position:absolute; left:50%; bottom: 20px; background: #358be3; border-radius:2px; color: #fff; width:150px; height:40px;
+    line-height:40px; text-align:center; margin-left: -75px;
+}
+#sendlist ul.sent_hotel_list span.rollback:hover { color: #fff; background: #1279e3; }
+
+/*其他需求加顿号*/
+#sendrfp_dialog.view_model form p label.exp { margin-right: -10px; }
+#sendrfp_dialog.view_model form p label.exp:after { content: '、'; }
+
+
+/*年会期间样式修改*/
+#sendrfp_dialog .send_success_qrcode {
+    padding: 20px 0;
+}
+#sendrfp_dialog .send_success_qrcode .show_info p.notice {
+    padding: 2px 10px;
+    margin: 2px 0 8px 0;
+    line-height: 24px;
+    font-size: 14px;
+    color: #ff9515;
+    background: #fff7ed;
+    border: 2px solid #ff9515;
+}
+#sendrfp_dialog .send_success_qrcode .show_info p.notice .i {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    margin: 1px 3px 0 0;
+    font-size: 16px;
+    vertical-align: top;
+}
+#sendrfp_dialog .send_success_qrcode .show_info h5 {
+    margin: 0;
+    padding: 0 0 8px 0;
+}
+#sendrfp_dialog .send_success_qrcode .show_info h6 {
+    margin: 0;
+}
+
+.force-hidden {
+    display: none !important;
+}
+
+.layui-layer-wrap #sendrfp_dialog input[type="text"],.layui-layer-wrap select {
+    height: 32px;
+    width: 210px;
+    padding: 0 0 0 8px;
+    margin: 0;
+    font-size: 16px;
+    color: #666;
+    border: 1px solid #eaeaea;
+    font-family: Arial,'Microsoft Yahei',SimSun,sans-serif;
+}
+
+#search_result .hotel_list li.hgg-search-notice {
+    border-bottom: none;
+}
+
+.hgg-search-notice {
+    width: 840px;
+    margin-top: 20px;
+    font-size: 14px;
+    color: #333;
+    line-height: 32px;
+    display: inline-block;
+}
+
+.hgg-search-notice .search-notice-box {
+    padding: 26px 20px;
+    border: 1px solid #cbe0f9;
+    background: #f4f9ff;
+}
+
+.hgg-search-notice .search-notice-txt {
+    float: left;
+    max-width: 680px;
+    margin: 5px 0;
+    font-size: 14px;
+    line-height: 20px;
+    color: #535353;
+}
+
+.hgg-search-notice .search-notice-box .btn {
+    float: right;
+}
+
+.hotel-recommend {
+    position: absolute;
+    top: 20px;
+    left: 5px;
+    width: 46px;
+    height: 30px;
+    color: #fff;
+    text-align: center;
+    line-height: 24px;
+    font-size: 12px;
+    background: url(../Images/list_recommend.png) left top no-repeat;
+}
+
+.venue-space {
+    width: 340px;
+    height: 160px;
+    margin-top: 16px;
+    overflow: hidden;
+}
+
+#search_result {
+    min-height: 700px !important;
+}
+
+#search_result_empty {
+    margin-bottom: 0;
+}
+
+
+.first_line .discount-label {
+    display: inline-block;
+    margin-top: 2px;
+    padding: 0 4px;
+    font-size: 12px;
+    line-height: 16px;
+    color: #e4001c;
+    border: 1px solid #e4001c;
+    border-radius: 2px;
+}
+
+#search_result .hotel_list .first_line h3.title a {
+    display: inline-block;
+    max-width: 400px;
+    line-height: 24px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
