@@ -1,0 +1,554 @@
+﻿/*header and footer common css*/
+.hgg-header, .hgg-header-box {
+    min-width: 1200px;
+    height: 88px;
+}
+
+.hgg-header {
+    background-color: #fff;
+}
+
+.hgg-header .hgg-header-box {
+    width: 100%;
+    min-width: 1200px;
+    height: 88px;
+    background-color: #fff;
+    border-bottom: 1px solid #f4f4f4;
+    border-bottom: 1px solid rgba(0,0,0,0.12);
+}
+
+.hgg-header .header-active {
+    border-bottom: none;
+    box-shadow: 0 1px 8px 0 rgba(0, 0, 0, 0.12);
+}
+
+.hgg-header .header-wrap {
+    height: 88px;
+}
+
+
+.hgg-header .header-logo {
+    float: left;
+    margin: 16px 0 0 0;
+}
+
+.hgg-header .header-logo .header-logo-inner {
+    float: left;
+    width: 152px;
+    height: 56px;
+}
+
+.hgg-header .header-logo .hgg-logo {
+    display: block;
+    width: 152px;
+    height: 56px;
+    background: url(../Images/hgg_logo.png) left top no-repeat;
+}
+
+.hgg-header .header-local {
+    float: left;
+    margin: 8px 0 0 16px;
+    border-radius: 2px;
+}
+
+.hgg-header .header-local .local-city {
+    position: relative;
+    display: inline-block;
+    height: 20px;
+    margin: 0 0 4px 0;
+    vertical-align: middle;
+}
+
+.hgg-header .header-local .local-city span {
+    position: relative;
+    display: block;
+    padding: 0 20px 0 6px;
+    font-size: 12px;
+    z-index: 2;
+}
+
+.hgg-header .header-local .local-city-link {
+    display: inline-block;
+    background: #f4f4f4;
+    color: #666;
+    font-size: 12px;
+    line-height: 20px;
+    vertical-align: top;
+}
+
+.hgg-header .header-local .local-city-link:hover {
+    background: #ededed;
+    text-decoration: none;
+}
+
+.hgg-header .header-local .hgg-down-arrow-small {
+    position: absolute;
+    right: 2px;
+    top: 0;
+    display: inline-block;
+    margin: 2px 0 0 0;
+    line-height: 16px;
+    vertical-align: top;
+    color: #999;
+    z-index: 1;
+}
+
+.hgg-header .header-local .hgg-slogen {
+    font-size: 12px;
+    color: #666;
+    line-height: 16px;
+}
+
+
+.hgg-header .header-nav {
+    float: left;
+    margin: 34px 0 0 0;
+}
+
+.hgg-header .header-nav li {
+    float: left;
+    padding: 0 16px;
+}
+
+.hgg-header .header-nav li:first-child {
+    padding: 0 16px 0 0;
+}
+
+.hgg-header .header-nav a {
+    position: relative;
+    color: #333;
+    font-size: 16px;
+}
+
+.hgg-header .header-nav a:hover {
+    color: #207bee;
+    text-decoration: none;
+}
+
+.hgg-header .header-nav li.header-nav-active a {
+    color: #207bee;
+}
+
+.hgg-header .header-nav .nav-tips {
+    position: absolute;
+    right: -22px;
+    top: -6px;
+    width: 24px;
+    height: 12px;
+}
+
+.hgg-header .header-nav .nav-tips-new {   
+    background: url(../Images/hgg_newtips.png) left top no-repeat;
+}
+
+.hgg-header .header-nav .bkg-ylw {
+    background: #ffb300;
+}
+
+.hgg-header .header-search {
+    position: relative;
+    float: left;
+    margin: 28px 0 0 0;
+}
+
+.hgg-header .header-search .header-search-btn {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    width: 16px;
+    height: 16px;
+    text-align: center;
+    line-height: 16px;
+    margin: -8px 0 0 0;
+    color: #666;
+    vertical-align: middle;
+    cursor: pointer;
+}
+
+.hgg-header .login-out {
+    position: relative;
+    float: right;
+    max-width: 210px;
+    margin: 35px 0 0 0;
+    line-height: 16px;
+    text-align: right;
+}
+
+.hgg-header .login-out a {
+    color: #666;
+    font-size: 12px;
+}
+
+.hgg-header .login-out a:hover {
+    color: #207bee;
+    text-decoration: none;
+}
+
+.hgg-header .login-out .split, .hgg-header .login-info .split {
+    margin: 0 10px;
+    color: #ddd;
+    font-size: 12px;
+}
+
+
+.hgg-header .login-info {
+    position: relative;
+    float: right;
+    max-width: 210px;
+    height: 40px;
+    line-height: 40px;
+    margin: 24px 0 0 0;
+    text-align: right;
+}
+
+.hgg-header .login-info a {
+    display: inline-block;
+    font-size: 12px;
+    color: #666;
+}
+
+.hgg-header .login-info a:hover {
+    color: #207bee;
+    text-decoration: none;
+}
+
+.hgg-header .login-info .login-user .hggfont {
+    color: #b2b2b2;
+}
+
+.hgg-header .login-info .login-user span {
+    display: inline-block;
+    max-width: 90px;
+    margin-top: 2px;
+    vertical-align: top;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+
+.header-wrap .login-hotel-box {
+    position: absolute;
+    right: 8px;
+    top: -35px;
+}
+
+.header-wrap .login-info .login-hotel-box {
+    top: -24px;
+}
+
+.header-wrap .login-hotel-box span {
+    position: relative;
+    display: block;
+    padding: 0 8px 0 4px;
+    background: #207bee;
+    border-radius: 0 0 2px 2px;
+    height: 24px;
+    line-height: 24px;
+    color: #fff;
+    font-size: 12px;
+}
+
+.header-wrap .login-hotel-box span:after {
+    position: absolute;
+    left: -12px;
+    top: 0;
+    content: ' ';
+    width: 0;
+    height: 0;
+    border-top: 23px solid #207bee;
+    border-left: 12px solid transparent;
+}
+
+
+.login-user-list {
+    position: absolute;
+    padding: 8px 0;
+    background: #fff;
+    border: 1px solid #ddd;
+    box-shadow: 0 1px 8px 0 rgba(0, 0, 0, 0.2);
+    -webkit-box-shadow: 0 1px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+
+.login-user-list:after, .login-user-list:before {
+    bottom: 100%;
+    left: 20%;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+}
+
+.login-user-list:after {
+    border-color: transparent;
+    border-bottom-color: #fff;
+    border-width: 8px;
+    margin-left: -8px;
+}
+
+.login-user-list:before {
+    border-color: transparent;
+    border-bottom-color: #ddd;
+    border-width: 9px;
+    margin-left: -9px;
+}
+
+.login-user-list a {
+    display: block;
+    height: 40px;
+    line-height: 40px;
+    padding: 0 20px 0 16px;
+    color: #666;
+}
+
+.login-user-list .hggfont {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    line-height: 16px;
+    margin: 12px 8px 0 0;
+    vertical-align: top;
+    color: #999;
+}
+
+.login-user-list a:hover {
+    background: #f4f4f4;
+    text-decoration: none;
+}
+
+
+.hgg-footer {
+    min-width: 1200px;
+    margin: 80px 0 0 0;
+    padding: 80px 0;
+    background: #1c2127;
+}
+
+.hgg-footer .col-9 {
+    padding: 0;
+}
+
+.hgg-footer .col-3 {
+    padding: 0;
+}
+
+.hgg-footer .hgg-footer-item {
+    float: left;
+}
+
+.hgg-footer .hgg-footer-item dt {
+    margin: 0 0 20px 0;
+}
+
+.hgg-footer .hgg-footer-item dt h4 {
+    color: #fff;
+}
+
+.hgg-footer .hgg-footer-item dd, .hgg-footer .hgg-footer-item dd a {
+    color: #999;
+    line-height: 28px;
+}
+
+.hgg-footer .hgg-footer-item dd a.hot {
+    color: #ffb300;
+}
+
+.hgg-footer .hgg-footer-item dd a:hover {
+    color: #eee;
+    text-decoration: none;
+}
+
+.hgg-footer .hgg-footer-code dd {
+    float: left;
+    width: 136px;
+    margin: 0 0 0 16px;
+    padding: 8px 0 0 0;
+    text-align: center;
+}
+
+.hgg-footer .hgg-footer-code dd:first-child {
+    margin: 0;
+}
+
+.hgg-footer .hgg-footer-code .footer-code-box {
+    width: 98px;
+    height: 98px;
+    margin: 0 auto 8px;
+}
+
+.hgg-footer .hgg-footer-code .footer-code-box img {
+    width: 98px;
+}
+
+.seo-hot-mtr {
+    width: 1200px;
+    margin: 80px auto 0;
+    padding-top: 24px;
+    border-top: 1px solid #333;
+}
+
+.seo-hot-mtr a {
+    float: left;
+    display: inline-block;
+    margin: 0 25px 0 0;
+    white-space: nowrap;
+    color: #333;
+}
+
+.seo-hot-mtr a:hover {
+    color: #999;
+    text-decoration: none;
+}
+
+.hgg-record {
+    margin-top: 80px;
+    padding-top: 24px;
+    border-top: 1px solid #3d3d3d;
+    text-align: center;
+}
+
+.hgg-record span {
+    display: inline-block;
+    margin: 0 12px;
+    font-size: 12px;
+    color: #999;
+    line-height: 16px;
+}
+
+.hgg-record strong {
+    font-size: 12px;
+    color: #999;
+}
+
+.hgg-record img {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    margin-top: 2px;
+    vertical-align: top;
+}
+
+/*全局搜索框样式*/
+.autocomplete-suggestions {
+    max-height: 315px;
+    margin-top: 4px;
+    padding: 0;
+    background: #fff;
+    border: 1px solid #207bee; 
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.09);
+    border-radius: 4px;
+    overflow: auto;
+}
+
+.autocomplete-suggestion {
+    width: 100%;
+    padding: 6px 12px; 
+    line-height: 20px;
+    font-size: 14px;
+    color: #333;
+    cursor: pointer;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.autocomplete-suggestion:hover {
+    background-color: #f4f4f4;
+}
+
+.autocomplete-selected { 
+    background: #f4f4f4;
+}
+
+.autocomplete-suggestions strong {
+    color: #f44336;
+}
+
+.autocomplete-group { 
+    padding: 0 5px;
+    padding: 6px 12px; 
+    line-height: 20px;    
+}
+
+.autocomplete-group strong { 
+    display: block; 
+    border-bottom: 1px solid #000; 
+}
+
+
+/* nianhui2018 */
+.hgg-header .annual-menu .header-search {
+    width: 20%;
+}
+
+.hgg-header .header-nav {
+    width: 38.33333333%
+}
+
+.hgg-header .annual-menu .header-nav a {
+    font-size: 14px;
+}
+
+.hgg-header .annual-menu .header-nav li.header-annual-active a {
+    color: #f50000;
+}
+
+.hgg-header .annual-menu .nav-tips-new {
+    right: -16px;
+    top: -20px;
+    width: 35px;
+    height: 25px;
+    background: url(../Images/annual_menu_icon.gif) left top no-repeat;
+}
+
+
+/*HGG baixing*/
+.hgg-bx-header .header-wrap {
+    position: relative;
+}
+
+.hgg-bx-header .header-logo {
+    margin-top: 12px;
+}
+
+.hgg-bx-header .header-logo .header-logo-inner {
+    width: 111px;
+}
+
+.hgg-bx-header .header-logo .hgg-logo {
+    width: 111px;
+    height: 56px;
+    background: url(../Images/hgg_bx_pic.png) left top no-repeat;
+}
+
+.hgg-bx-header .header-local {
+    margin-top: 14px;
+}
+
+.hgg-bx-header .header-wrap .login-hotel-box {
+    top: 0;
+    right: 0;
+}
+
+.hgg-bx-footer {
+    width: 100%;
+    min-width: 1200px;
+    margin-top: 80px;
+    padding: 30px 0;
+    background: #1c2127;
+}
+
+.hgg-bx-footer .container p {
+    text-align: center;
+    font-size: 14px;
+    line-height: 20px;
+    color: #fff;
+    text-align: center;
+}
+
+.hgg-bx-footer .container span.hgg-bx-split {
+    margin: 0 14px;
+}
